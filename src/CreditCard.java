@@ -5,14 +5,16 @@ public class CreditCard
 {    
 	public static void main (String[] args) throws IOException
 	{	        
-		Scanner file = new Scanner(new File("Credit Cards Numbers.txt"));
-	    int fileLength = file.nextInt(); 
-	    String line = file.nextLine();
-	    
-	    for (int n = 0; n < fileLength; n++ )
+		Scanner file = new Scanner(new File("Credit Cards Numbers.txt")); 
+		String fileLength = file.nextLine();
+	  
+		for (int n = 0; n < fileLength.length(); n++ )
 	    {   
-	       line = file.nextLine();
-	       System.out.println(line);
+	    	 String line = file.nextLine();
+	         String [] readCard = line.split("");
+	         int size = readCard.length;
+	         
+	         System.out.println(line);
 	    }    
 	}
 }
