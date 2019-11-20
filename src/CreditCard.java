@@ -6,9 +6,11 @@ public class CreditCard
 	public static void main (String[] args) throws IOException
 	{	        
 		Scanner file = new Scanner(new File("Credit Cards Numbers.txt")); 
-		Scanner stringInput = new Scanner(System.in);
-		System.out.println("how many credit cards?");
-		int fileLength = stringInput.nextInt();
+		Scanner intInput = new Scanner(System.in);
+		System.out.println("How many credit cards?");
+		int fileLength = intInput.nextInt();
+		int invalidCounter = 0;
+		int validCounter = 0;
 		
 		for(int n = 0; n < fileLength; n++)
 		{
@@ -39,15 +41,31 @@ public class CreditCard
 	 			sum += readCard[i];
 	 		}
 	 		
+	 		
+	 		
+	 		
 	 		if (sum % 10 == 0) 
 	 		{
-	 			System.out.println(line + " is a valid credit card number");
+	 			
+	 			
+	 			for(int i = 0; i < line.length(); i++)
+	 			{
+	 				validCounter++;
+	 			}
+	 			
+	 			System.out.println(line + " is a valid credit card number.");
 	 		} 
 	 		
 	 		else 
-	 		{
-	 			System.out.println(line + " is an invalid credit card number");
+	 		{	
+	 			for(int i = 0; i < line.length(); i++)
+	 			{
+	 				invalidCounter++;
+	 			}	
+	 			System.out.println(line + " is an invalid credit card number.");	
 	 		}
-		}    
+		}
+		System.out.println("Total Valid Credit Cards: " + validCounter);
+		System.out.println("Total Invalid Credit Cards: " + invalidCounter);
 	}
 }
