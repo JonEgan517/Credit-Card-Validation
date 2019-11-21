@@ -40,28 +40,16 @@ public class CreditCard
 	 		{
 	 			sum += readCard[i];
 	 		}
-	 		
-	 		
-	 		
-	 		
+	 	
 	 		if (sum % 10 == 0) 
 	 		{
-	 			
-	 			
-	 			for(int i = 0; i < line.length(); i++)
-	 			{
-	 				validCounter++;
-	 			}
-	 			
+	 			validCounter++;
 	 			System.out.println(line + " is a valid credit card number.");
 	 		} 
 	 		
 	 		else 
 	 		{	
-	 			for(int i = 0; i < line.length(); i++)
-	 			{
-	 				invalidCounter++;
-	 			}	
+	 			invalidCounter++;	
 	 			System.out.println(line + " is an invalid credit card number.");	
 	 		}
 		}
